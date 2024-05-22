@@ -20,8 +20,6 @@ const upload = multer({
   },
 });
 
-//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
-
 router.post(
   "/users/me/avatar",
   auth,
