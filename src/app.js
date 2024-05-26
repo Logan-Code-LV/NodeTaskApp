@@ -7,7 +7,7 @@ const taskRouter = require("./routers/task");
 
 const app = express();
 
-app.use(express.static(path.join(__dirname, "../client/build")));
+app.use(express.static(path.join(__dirname, "../my-app/build")));
 
 app.use(express.json());
 app.use(userRouter);
@@ -19,7 +19,7 @@ app.get("/", (req, res) => {
 
 // Catch-all route handler
 app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "../client/build", "index.html"));
+  res.sendFile(path.join(__dirname, "../my-app/build", "index.html"));
 });
 
 module.exports = app;
