@@ -1,0 +1,57 @@
+.main-mern-stack-icons-container {
+  display: flex;
+  flex-direction: column;
+  width: min-content;
+  margin: 0 auto;
+}
+
+.mern-stack-icons-container {
+  display: flex;
+  align-items: center;
+  margin: 20px;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.icon-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px;
+  color: white;
+}
+
+.icon {
+  font-size: 60px;
+  margin-bottom: 5px;
+}
+
+.mongodb {
+  color: #4db33d;
+}
+
+.express {
+  color: #000000;
+}
+
+.react {
+  color: #61dafb;
+}
+
+.nodejs {
+  color: #68a063;
+}
+
+.icon-item p {
+  margin: 0;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.mern-stack-description {
+  text-align: center;
+  color: white;
+  font-size: 18px;
+  margin-top: 10px;
+}

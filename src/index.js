@@ -1,26 +1,15 @@
+const app = require("./app");
 const express = require("express");
-require("./db/mongoose");
-require("./emails/account");
-const userRouter = require("./routers/user");
-const taskRouter = require("./routers/task");
-const multer = require("multer");
-
-const app = express();
-const port = process.env.PORT;
-
-const upload = multer({
-  dest: "images",
-});
-app.post("/upload", upload.single("upload"), (req, res) => {
-  res.send();
-});
-
-app.use(express.json());
-app.use(userRouter);
-app.use(taskRouter);
+const path = require("path");
+const port = process.env.PORT || 3005;
 
 app.get("/", (req, res) => {
   res.send("home page");
+});
+
+// Catch-all route handler
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "../client/build", "index.html"));
 });
 
 app.listen(port, () => {

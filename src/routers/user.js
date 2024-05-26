@@ -54,7 +54,7 @@ router.delete(
   }
 );
 
-router.get("/users", auth, async (req, res) => {
+router.get("/api/users", auth, async (req, res) => {
   try {
     const fetchUsers = await User.find({});
     res.status(200).send(fetchUsers);
