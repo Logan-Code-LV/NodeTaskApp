@@ -1,25 +1,26 @@
-const path = require("path");
-const express = require("express");
-require("./db/mongoose");
-require("./emails/account");
-const userRouter = require("./routers/user");
-const taskRouter = require("./routers/task");
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import RegisterForm from "./components/RegisterForm";
+import LoginForm from "./components/LoginForm";
+import Navbar from "./components/Navbar";
+import HomePage from "./components/HomePage";
+import "./index.css";
 
-const app = express();
+function App() {
+  return (
+    <Router>
+      <div className="App">
+        <Navbar />
+        <br />
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          {/* Add the HomePage route */}
+          <Route path="/register" element={<RegisterForm />} />
+          <Route path="/login" element={<LoginForm />} />
+        </Routes>
+      </div>
+    </Router>
+  );
+}
 
-app.use(express.static(path.join(__dirname, "../my-app/build")));
-
-app.use(express.json());
-app.use(userRouter);
-app.use(taskRouter);
-
-app.get("/", (req, res) => {
-  res.send("home page");
-});
-
-// Catch-all route handler
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "../my-app/build", "index.html"));
-});
-
-module.exports = app;
+export default App;

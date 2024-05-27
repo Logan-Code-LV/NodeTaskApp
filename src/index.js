@@ -1,25 +1,17 @@
-const path = require("path");
-const express = require("express");
-require("./db/mongoose");
-require("./emails/account");
-const userRouter = require("./routers/user");
-const taskRouter = require("./routers/task");
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import './index.css';
+import App from './App';
+import reportWebVitals from './reportWebVitals';
 
-const app = express();
-const port = process.env.PORT || 3005;
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);
 
-// Serve static files from the React app
-app.use(express.static(path.join(__dirname, "../client/build")));
-
-app.use(express.json());
-app.use(userRouter);
-app.use(taskRouter);
-
-// Catch-all route handler
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "../client/build", "index.html"));
-});
-
-app.listen(port, () => {
-  console.log("Task App up n runnin on port", port);
-});
+// If you want to start measuring performance in your app, pass a function
+// to log results (for example: reportWebVitals(console.log))
+// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+reportWebVitals();

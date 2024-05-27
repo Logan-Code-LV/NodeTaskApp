@@ -1,0 +1,32 @@
+/* Navbar.css */
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #6e8efb;
+  padding: 10px 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  position: sticky;
+  top: 0;
+  margin: 0 auto;
+  justify-content: space-between;
+  width: unset;
+}
+
+.navbar-brand a {
+  font-size: 1.5em;
+  color: white;
+  text-decoration: none;
+}
+
+.navbar-links a {
+  margin: 0 10px;
+  color: white;
+  text-decoration: none;
+  font-size: 1.2em;
+}
+
+.navbar-links a:hover {
+  text-decoration: underline;
+}

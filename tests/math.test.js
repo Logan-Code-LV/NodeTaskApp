@@ -2,7 +2,7 @@ const {
   calculateTip,
   fahrenheitToCelsius,
   celsiusToFahrenheit,
-} = require("../src/math");
+} = require("../server/math");
 
 test("Should calculate total with tip", () => {
   const total = calculateTip(10, 0.3);
