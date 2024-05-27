@@ -30,13 +30,12 @@
     "web-vitals": "^2.1.4"
   },
   "devDependencies": {
-    "jest": "^29.7.0",
-    "supertest": "^7.0.0",
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
-    "typescript": "^5.4.5"
+    "jest": "^29.7.0",
+    "supertest": "^7.0.0"
   },
   "scripts": {
-    "start": "npm install && npm run build && node server/index.js",
+    "start": "npm run build && node server/index.js",
     "dev": "env-cmd -f ./config/dev.env nodemon server/index.js",
     "test": "env-cmd -f ./config/test.env jest --watch",
     "build": "react-scripts build",
